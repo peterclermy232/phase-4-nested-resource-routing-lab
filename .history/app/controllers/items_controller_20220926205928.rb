@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
     end
     render json: items, include: :user
   end
-
  def show
   item = find_item
   render json: item
@@ -32,6 +31,6 @@ class ItemsController < ApplicationController
     params.permit(:name, :description, :price)
 end
  def render_not_found_response(exception)
-  render json: {error: "#{exception.model} not found"}, status: :not_found
+  render json: {error: "#{exception.mode} not found"}, status: :render_not_found
  end
 end
